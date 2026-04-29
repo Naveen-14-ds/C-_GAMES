@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web Gaming Platform (C++ / WASM)</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__mark"></div>
+          <div class="brand__text">
+            <div class="brand__title">Arcade Deck</div>
+            <div class="brand__sub">
+              HTML/CSS launcher · C++ game core via WebAssembly
+            </div>
+          </div>
+        </div>
+        <div class="status" id="status">Engine ready</div>
+      </header>
+
+      <main class="main">
+        <!-- LEFT PANEL -->
+        <section class="panel">
+          <div class="panel__header">
+            <div class="panel__title">Games</div>
+            <div class="panel__hint">Pick a game, then play in the arena.</div>
+          </div>
+
+          <div class="games">
+            <button class="gameCard" id="btnFootball">
+              <div class="gameCard__name">Two-Player Football</div>
+              <div class="gameCard__desc">
+                Arcade soccer with physics, goals, and score.
+              </div>
+              <div class="gameCard__meta">
+                <span class="pill">2 players</span>
+                <span class="pill">W/S · ↑/↓</span>
+                <span class="pill">Space kick</span>
+              </div>
+            </button>
+
+            <button class="gameCard" id="btnSnake">
+              <div class="gameCard__name">Snake (Classic)</div>
+              <div class="gameCard__desc">
+                Grid-based console classic: eat, grow, don’t crash.
+              </div>
+              <div class="gameCard__meta">
+                <span class="pill">1 player</span>
+                <span class="pill">WASD / Arrows</span>
+                <span class="pill">R restart</span>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <!-- ARENA -->
+        <section class="arena">
+          <div class="arena__header">
+            <div class="arena__left">
+              <div class="arena__title" id="arenaTitle">Arena</div>
+              <div class="arena__subtitle" id="arenaSubtitle">
+                Select a game to begin.
+              </div>
+            </div>
+            <div class="arena__right">
+              <div class="scoreboard" id="scoreboard"></div>
+            </div>
+          </div>
+
+          <div class="canvasWrap">
+            <canvas id="canvas" width="900" height="540"></canvas>
+
+            <div class="overlay" id="overlay">
+              <div class="overlay__box">
+                <div class="overlay__title">Ready when you are</div>
+                <div class="overlay__text">
+                  Choose a game on the left to launch it.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="footer">
+            <span id="fps">— fps</span>
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
